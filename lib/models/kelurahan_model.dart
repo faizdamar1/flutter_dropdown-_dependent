@@ -18,4 +18,11 @@ class KelurahanModel {
     data['name'] = name;
     return data;
   }
+
+  bool isEqual(KelurahanModel model) {
+    return id == model.id;
+  }
+
+  @override
+  String toString() => name!;
 }

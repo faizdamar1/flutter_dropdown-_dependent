@@ -15,4 +15,11 @@ class ProvinsiModel {
     data['name'] = name;
     return data;
   }
+
+  bool isEqual(ProvinsiModel model) {
+    return id == model.id;
+  }
+
+  @override
+  String toString() => name!;
 }

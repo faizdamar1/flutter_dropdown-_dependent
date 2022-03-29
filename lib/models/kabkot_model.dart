@@ -18,4 +18,11 @@ class KabkotModel {
     data['name'] = name;
     return data;
   }
+
+  bool isEqual(KabkotModel model) {
+    return id == model.id;
+  }
+
+  @override
+  String toString() => name!;
 }
