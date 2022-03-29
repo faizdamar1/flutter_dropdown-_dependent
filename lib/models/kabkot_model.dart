@@ -1,17 +1,20 @@
-class ProvinsiModel {
+class KabkotModel {
   String? id;
+  String? idProvinsi;
   String? name;
 
-  ProvinsiModel({this.id, this.name});
+  KabkotModel({this.id, this.idProvinsi, this.name});
 
-  ProvinsiModel.fromJson(Map<String, dynamic> json) {
+  KabkotModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
+    idProvinsi = json['id_provinsi'];
     name = json['name'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
+    data['id_provinsi'] = idProvinsi;
     data['name'] = name;
     return data;
   }
