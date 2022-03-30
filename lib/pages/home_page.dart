@@ -48,6 +48,40 @@ class _HomePageState extends State<HomePage> {
     return [];
   }
 
+  Future<void> doProses() async {
+    if (selectedProv == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("provinsi tidak boleh kosong"),
+        ),
+      );
+    }
+
+    if (selectedKabkot == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Kab/Kota tidak boleh kosong"),
+        ),
+      );
+    }
+
+    if (selectedKec == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("kecamatan tidak boleh kosong"),
+        ),
+      );
+    }
+
+    if (selectedKel == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("kelurahan tidak boleh kosong"),
+        ),
+      );
+    }
+  }
+
   // testApi() async {
   //   print('get provinsi');
   //   var prov = await WilayahService().getProvinsi();
@@ -104,6 +138,9 @@ class _HomePageState extends State<HomePage> {
       onChanged: (value) {
         setState(() {
           selectedProv = value;
+          selectedKabkot = null;
+          selectedKec = null;
+          selectedKel = null;
         });
       },
       clearButtonSplashRadius: 20,
@@ -226,7 +263,14 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 20),
           kecamatan,
           const SizedBox(height: 20),
-          kelurahan
+          kelurahan,
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              doProses();
+            },
+            child: const Text("data"),
+          )
         ],
       ),
     );
