@@ -1,6 +1,6 @@
 String url = "https://api.binderbyte.com/wilayah";
-String key =
-    "api_key=6355b79cbc5f79b2d297a6724566c7ca263028ee0074b015b4161a14d7af27e0";
+
+String key = "api_key=GET_KEY_IN_BINDER_BYTE";
 
 String apiprovinsi = "$url/provinsi?$key";
 
